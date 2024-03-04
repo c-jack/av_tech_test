@@ -11,7 +11,7 @@ interface BaseDao<T> {
     // returns the object with matching id
     def getByIdentifier(String identifier)
 
-    int save(final T object)
+    void save(final T object)
 
-    void delete(final T container)
+    void delete(final T object)
 }
