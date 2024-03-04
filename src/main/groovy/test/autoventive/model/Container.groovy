@@ -21,4 +21,23 @@ class Container {
      * The status of the container
      */
     Status status
+
+    /**
+     * The orientation of the container
+     */
+    Orientation orientation
+
+    /**
+     * The inventory orientation of the container
+     */
+    Orientation inventoryOrientation
+
+    // Getter and setter for inventoryOrientation
+    Orientation getInventoryOrientation() {
+        return inventoryOrientation
+    }
+
+    void setInventoryOrientation(Orientation inventoryOrientation) {
+        this.inventoryOrientation = inventoryOrientation
+    }
 }

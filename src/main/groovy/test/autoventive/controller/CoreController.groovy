@@ -39,11 +39,10 @@ trait CoreController<T> {
     }
 
     /**
-     * Creates and persist an item
-     */
+    * Deletes an Object
+    * @param the ID of the Object to be deleted
+    */
     def delete(final String identifier) {
-        // TODO implement delete logic
-//        containerDao.delete(container)
+        getDao().delete(identifier)
     }
-
 }
