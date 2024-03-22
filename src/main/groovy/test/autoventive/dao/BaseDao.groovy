@@ -13,5 +13,5 @@ interface BaseDao<T> {
 
     int save(final T object)
 
-    void delete(final T container)
+    void delete(final T object)
 }
