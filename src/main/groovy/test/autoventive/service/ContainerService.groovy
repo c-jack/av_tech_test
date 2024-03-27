@@ -33,6 +33,13 @@ class ContainerService implements Service {
         return b
     }
 
+    void loadAssetOnToContainer(String containerIdentifier, Asset asset) {
+
+        Container container = containerDao.getByIdentifier(containerIdentifier)
+
+        asset.setContainerId(container.identifier)
+    }
+
     @Override
     BaseDao getDao() {
         return this.containerDao
