@@ -1,6 +1,5 @@
 package test.autoventive.model
 
-import test.autoventive.enums.Orientation
 import test.autoventive.enums.Status
 
 /**
@@ -22,15 +21,4 @@ class Container {
      * The status of the container
      */
     Status status
-
-    /**
-     * The orientation of the container
-     */
-    Orientation orientation
-
-    /**
-     * The orientation of the assets inside container - defined by the first asset being loaded
-     */
-    Orientation inventoryOrientation
-
 }
