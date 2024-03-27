@@ -43,6 +43,21 @@ class ContainerControllerTest extends Specification {
     }
 
     /**
+     * Test for {@link ContainerController#getContainersByStatus}
+     */
+    def "list filtered by Status should return all persisted Containers with specified Status"() {
+        given: "I create two distinct containers"
+        def container1 = new Container(identifier: "Container1", capacity: 10, status: Status.AVAILABLE)
+        def container2 = new Container(identifier: "Container2", capacity: 10, status: Status.OUT_OF_SERVICE)
+
+        and: "I stub the getAll DAO method to return the containers"
+        mockContainerDao.getAll() >> [container1, container2]
+
+        expect: "list to return the value retrieved from the DAO with status available"
+        controller.getContainersByStatus(Status.AVAILABLE) == [container1]
+    }
+
+    /**
      * Test for {@link ContainerController#get}
      *
      * This method currently has no validation of the provided string, so we expect all variants of String to work
