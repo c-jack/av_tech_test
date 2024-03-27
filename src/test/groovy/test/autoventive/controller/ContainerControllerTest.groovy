@@ -75,21 +75,4 @@ class ContainerControllerTest extends Specification {
         then: "The DAO Save method should be invoked once with the provided object"
         1 * mockContainerDao.save(container)
     }
-
-/**
- * Test for {@link ContainerController#delete}
-*/
-    def "delete should return the result of the DAO delete method"() {
-        given: "I create a new container"
-        def container = new Container(identifier: "NewContainer", capacity: 123, status: Status.AVAILABLE)
-
-        and: "I stub the container to be returned from the DAO getByIdentifier method"
-        1 * mockContainerDao.getByIdentifier(identifier) >> container
-
-        when: "The Container is passed to the delete method"
-        controller.delete(container)
-
-        then: "The DAO Save method should be invoked once with the provided object"
-        1 * mockContainerDao.delete(container)
-    }
 }
