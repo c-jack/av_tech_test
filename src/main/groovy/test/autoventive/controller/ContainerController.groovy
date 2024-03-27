@@ -2,8 +2,6 @@ package test.autoventive.controller
 
 import test.autoventive.dao.BaseDao
 import test.autoventive.dao.ContainerDao
-import test.autoventive.enums.Status
-import test.autoventive.model.Container
 
 /**
  * Controller for Container-based activities
@@ -36,9 +34,5 @@ class ContainerController implements CoreController {
     @Override
     BaseDao getService() {
         return null
-    }
-
-    List<Container> getContainersByStatus(Status status) {
-        return getDao().getAll().find({it.status == status})
     }
 }

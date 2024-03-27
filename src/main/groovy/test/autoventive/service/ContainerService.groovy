@@ -2,7 +2,6 @@ package test.autoventive.service
 
 import test.autoventive.dao.BaseDao
 import test.autoventive.dao.ContainerDao
-import test.autoventive.enums.Status
 import test.autoventive.model.Container
 
 /**
@@ -37,9 +36,4 @@ class ContainerService implements Service {
     BaseDao getDao() {
         return this.containerDao
     }
-
-    List<Container> getContainersByStatus(Status status) {
-        return containerDao.getContainersByStatus(status)
-    }
-
 }
