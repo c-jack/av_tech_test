@@ -15,21 +15,19 @@ approach such a situation in 'real life' and then discuss it during the intervie
 ## Orientation
 
 The exercise is written in Groovy, because our real-life main application is written in Groovy (actually Grails: "Groovy on Rails"), but this is not a test of how well you know Groovy.
- We want to test your ability to work effectively with a technology you may not have used before. 
-Groovy is a JVM language, and you if you wish you can simply write plain Java and it will still compile and run. The key differences between Groovy and Java are highlighted [here](https://groovy-lang.org/differences.html#:~:text=In%20Groovy%2C%20the%20methods%20which,based%20on%20the%20declared%20types.)
+ Groovy is a JVM language, and if you wish you can simply write plain Java and it will still compile and run. The key differences between Groovy and Java are highlighted [here](https://groovy-lang.org/differences.html#:~:text=In%20Groovy%2C%20the%20methods%20which,based%20on%20the%20declared%20types.)
 
 You'll see in the `Main` class that this application won't actually run. It doesn't need to run, and you don't need to make it run to complete the exercise.
 
 If you're familiar with Spring Boot you'll expect to see url mappings on the controller methods. In Grails this is handled slightly differently, so don't be confused by
-the absence of a url mapping. For example the load method in the `ContainerController`: just assume that an incoming POST request to, say, `/container/load` will hit that method.
+the absence of a url mapping. For example the `load` method in the `ContainerController`: just assume that an incoming POST request to, say, `/container/load` will hit that method.
 Again, this application doesn't have to actually run - you don't need to implement a working API.
 
 Again if you're familiar with Spring Boot you'll be used to accessing a database using a Repository pattern. This codebase essentially does the same thing
 but with DAO classes.
 
-The tests are written using the Spock framework. Again, you don't need to have used Spock before to complete this test. If you 
-familiarise yourself with the [basics](https://spockframework.org/spock/docs/2.3/spock_primer.html) - don't worry about spending
-too much time on this - then that should be enough.
+The tests are written using the Spock framework. You don't need to have used Spock before to complete this test. Just
+familiarise yourself with the [basics](https://spockframework.org/spock/docs/2.3/spock_primer.html).
 
 You should interpret the sample application as 'brownfield' - i.e. not all of the existing code should be seen as well-written or in an ideal state.  Part of working with an established project is that some areas you need
 to maintain or extend will often have issues with code style, formatting and/or design; use your own discretion if you feel you want, or need, to make changes (or not). Just be
@@ -62,7 +60,7 @@ The core terms used are:
     * The inventory will always be loaded from the back into the first position,
         * e.g. if a Container is facing forwards, the assets will be loaded front-facing into the container from its back, and the `inventoryOrientation` will therefore be forwards too.
         * OR if the Container is facing backwards, the assets will be loaded front-facing into the container from its front, thus the `inventoryOrientation` will be backwards
-* Modify the get methods for Container to return a comma-separated String of Identifiers for any inventory loaded
+* Add a method to ContainerController that returns a comma-separated String of Identifiers for any inventory loaded onto a given Container
 
 
 
